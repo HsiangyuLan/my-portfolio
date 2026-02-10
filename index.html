@@ -27,20 +27,19 @@
   <header class="site-header">
     <nav class="nav" aria-label="主要導覽">
       <ul class="nav-list">
-        <li><a href="#about" data-en="About" data-zh="關於我">About</a></li>
-        <li><a href="#engineering" data-en="Engineering" data-zh="工程架構">Engineering</a></li>
-        <li><a href="#experience" data-en="Experience" data-zh="經歷">Experience</a></li>
-        <li><a href="#projects" data-en="Projects" data-zh="專案">Projects</a></li>
-        <li><a href="#art-lab" data-en="Art Lab" data-zh="藝術實驗室">Art Lab</a></li>
-        <li><a href="#skills" data-en="Tech Stack" data-zh="技術棧">Tech Stack</a></li>
-        <li><a href="#contact" data-en="Contact" data-zh="聯絡">Contact</a></li>
+        <li><a href="#about" class="nav-link" data-en="About" data-zh="關於我">About</a></li>
+        <li><a href="#engineering" class="nav-link" data-en="Engineering" data-zh="工程技術">Engineering</a></li>
+        <li><a href="#experience" class="nav-link" data-en="Experience" data-zh="經歷">Experience</a></li>
+        <li><a href="#projects" class="nav-link" data-en="Projects" data-zh="專案作品">Projects</a></li>
+        <li><a href="#art-lab" class="nav-link" data-en="Art Lab" data-zh="藝術實驗室">Art Lab</a></li>
+        <li><a href="#skills" class="nav-link" data-en="Tech Stack" data-zh="技術棧">Tech Stack</a></li>
+        <li><a href="#contact" class="nav-link" data-en="Contact" data-zh="聯絡方式">Contact</a></li>
       </ul>
     </nav>
-    <button type="button" class="lang-toggle btn" id="lang-toggle" aria-label="Switch language" title="EN / 中文">🌐 EN/中文</button>
   </header>
 
   <main id="main">
-    <section class="hero" id="hero" aria-labelledby="hero-heading">
+    <section class="hero scroll-reveal" id="hero" aria-labelledby="hero-heading">
       <div class="hero-content">
         <p class="hero-role typewriter-line" aria-label="MIS Architecture, Vibe Coder">
           <span class="typewriter-en">
@@ -57,8 +56,8 @@
         <h1 id="hero-heading" class="hero-title">Hsiangyu <span class="accent">(Shawn)</span> Lan</h1>
         <p class="hero-tagline" data-en="&quot;Bridging Business Strategy with AI-Driven Architecture.&quot;" data-zh="「串接商業策略與 AI 驅動的系統架構。」">"Bridging Business Strategy with AI-Driven Architecture."</p>
         <div class="hero-cta-wrap">
-          <a href="#contact" class="hero-cta btn" data-en="Let's Connect" data-zh="聯絡我">Let's Connect</a>
-          <a href="Hsiangyu_Lan_Resume.pdf" download="Hsiangyu_Lan_Resume.pdf" class="hero-cta hero-cta-ghost btn" data-en="Download Resume / CV" data-zh="下載履歷">Download Resume / CV</a>
+          <a href="#contact" class="hero-cta btn" data-en="Let's Connect" data-zh="建立連結">Let's Connect</a>
+          <a href="Hsiangyu_Lan_Resume.pdf" download="Hsiangyu_Lan_Resume.pdf" class="hero-cta hero-cta-ghost btn" data-en="Download Resume / CV" data-zh="下載履歷 / CV">Download Resume / CV</a>
           <a href="https://www.linkedin.com/in/hsiangyu1230/" target="_blank" rel="noopener noreferrer" class="hero-cta hero-cta-linkedin btn" title="LinkedIn">
             <svg class="hero-cta-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             <span data-en="LinkedIn" data-zh="LinkedIn">LinkedIn</span>
@@ -68,7 +67,7 @@
       <div class="hero-glow" aria-hidden="true"></div>
     </section>
 
-    <section class="section about" id="about" aria-labelledby="about-heading">
+    <section class="section about scroll-reveal" id="about" aria-labelledby="about-heading">
       <div class="container">
         <h2 id="about-heading" class="section-title"><span class="section-num">01</span> <span data-en="About Me" data-zh="關於我">About Me</span></h2>
         <div class="about-grid">
@@ -79,7 +78,7 @@
       </div>
     </section>
 
-    <section class="section engineering" id="engineering" aria-labelledby="engineering-heading">
+    <section class="section engineering scroll-reveal" id="engineering" aria-labelledby="engineering-heading">
       <div class="container">
         <h2 id="engineering-heading" class="section-title eng-title"><span class="section-num">—</span> <span data-en="Engineering &amp; Architecture" data-zh="工程與架構">Engineering & Architecture</span></h2>
         <p class="eng-subtitle" data-en="Tech-Card" data-zh="硬派技術 · Tech-Card">Tech-Card</p>
@@ -89,9 +88,9 @@
               <h3 class="eng-card-title">Field Dragon: Enterprise Web</h3>
               <ul class="eng-tags">
                 <li>React</li>
-                <li>Frontend Arch</li>
+                <li data-en="Frontend Arch" data-zh="前端架構">Frontend Arch</li>
               </ul>
-              <p class="eng-card-desc">Responsive SPA with component modularity and state management.</p>
+              <p class="eng-card-desc" data-en="Responsive SPA with component modularity and state management." data-zh="具元件模組化與狀態管理的響應式 SPA。">Responsive SPA with component modularity and state management.</p>
               <a href="https://github.com/Project-Field-Dragon/field-dragon-web" target="_blank" rel="noopener noreferrer" class="eng-card-link btn" data-en="View Code" data-zh="檢視程式碼">View Code</a>
             </div>
           </article>
@@ -102,7 +101,7 @@
                 <li>.NET/Python</li>
                 <li>REST API</li>
               </ul>
-              <p class="eng-card-desc">Decoupled backend service handling complex business logic.</p>
+              <p class="eng-card-desc" data-en="Decoupled backend service handling complex business logic." data-zh="解耦後端服務，處理複雜商業邏輯。">Decoupled backend service handling complex business logic.</p>
               <a href="https://github.com/Project-Field-Dragon/field-dragon-api" target="_blank" rel="noopener noreferrer" class="eng-card-link btn" data-en="View Code" data-zh="檢視程式碼">View Code</a>
             </div>
           </article>
@@ -114,7 +113,7 @@
                 <li>SQLite</li>
                 <li>BCNF</li>
               </ul>
-              <p class="eng-card-desc">High-integrity logistics system featuring BCNF normalization and secure CRUD operations.</p>
+              <p class="eng-card-desc" data-en="High-integrity logistics system featuring BCNF normalization and secure CRUD operations." data-zh="高完整性物流系統，具 BCNF 正規化與安全 CRUD 操作。">High-integrity logistics system featuring BCNF normalization and secure CRUD operations.</p>
               <a href="https://github.com/HsiangyuLan/HsiangyuLan-CSE3241_Database_Project" target="_blank" rel="noopener noreferrer" class="eng-card-link btn" data-en="View Code" data-zh="檢視程式碼">View Code</a>
             </div>
           </article>
@@ -122,45 +121,45 @@
       </div>
     </section>
 
-    <section class="section experience" id="experience" aria-labelledby="experience-heading">
+    <section class="section experience scroll-reveal" id="experience" aria-labelledby="experience-heading">
       <div class="container">
         <h2 id="experience-heading" class="section-title"><span class="section-num">02</span> <span data-en="Experience" data-zh="經歷">Experience</span></h2>
         <div class="timeline">
           <article class="timeline-item card">
             <div class="timeline-meta">
               <span class="timeline-period">Spring 2026</span>
-              <span class="timeline-role">Student Assistant (ACCTMIS 4620)</span>
-              <span class="timeline-org">The Ohio State University</span>
+              <span class="timeline-role" data-en="Student Assistant (ACCTMIS 4620)" data-zh="學生助理 (ACCTMIS 4620)">Student Assistant (ACCTMIS 4620)</span>
+              <span class="timeline-org" data-en="The Ohio State University" data-zh="俄亥俄州立大學 (OSU)">The Ohio State University</span>
             </div>
-            <p class="timeline-highlight">Mentoring students in Management Information Systems analysis, reinforcing database design and system architecture concepts.</p>
+            <p class="timeline-highlight" data-en="Mentoring students in Management Information Systems analysis, reinforcing database design and system architecture concepts." data-zh="指導學生 MIS 分析，強化資料庫設計與系統架構概念。">Mentoring students in Management Information Systems analysis, reinforcing database design and system architecture concepts.</p>
           </article>
           <article class="timeline-item card">
             <div class="timeline-meta">
               <span class="timeline-period">Feb 2025 – Aug 2025</span>
-              <span class="timeline-role">Intern</span>
+              <span class="timeline-role" data-en="Intern" data-zh="實習生">Intern</span>
               <span class="timeline-org">Taiwan Tech Arena (IAPS)</span>
             </div>
-            <p class="timeline-highlight">Analyzed commercialization strategies for AI/IoT startups, coordinated global forums (InnoVEX), and conducted investment evaluations.</p>
+            <p class="timeline-highlight" data-en="Analyzed commercialization strategies for AI/IoT startups, coordinated global forums (InnoVEX), and conducted investment evaluations." data-zh="分析 AI/IoT 新創商業化策略，協調全球論壇 (InnoVEX)，並執行投資評估。">Analyzed commercialization strategies for AI/IoT startups, coordinated global forums (InnoVEX), and conducted investment evaluations.</p>
           </article>
           <article class="timeline-item card">
             <div class="timeline-meta">
               <span class="timeline-period">Aug 2023 – Present</span>
-              <span class="timeline-role">Teaching Assistant (CSE 2111)</span>
-              <span class="timeline-org">The Ohio State University</span>
+              <span class="timeline-role" data-en="Teaching Assistant (CSE 2111)" data-zh="助教 (CSE 2111)">Teaching Assistant (CSE 2111)</span>
+              <span class="timeline-org" data-en="The Ohio State University" data-zh="俄亥俄州立大學 (OSU)">The Ohio State University</span>
             </div>
-            <p class="timeline-highlight">Instructing Excel modeling, VBA, and SQL logic to optimize business problem-solving.</p>
+            <p class="timeline-highlight" data-en="Instructing Excel modeling, VBA, and SQL logic to optimize business problem-solving." data-zh="教授 Excel 建模、VBA 與 SQL 邏輯，優化商業問題解決。">Instructing Excel modeling, VBA, and SQL logic to optimize business problem-solving.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section projects" id="projects" aria-labelledby="projects-heading">
+    <section class="section projects scroll-reveal" id="projects" aria-labelledby="projects-heading">
       <div class="container">
-        <h2 id="projects-heading" class="section-title"><span class="section-num">03</span> <span data-en="Projects" data-zh="專案">Projects</span></h2>
+        <h2 id="projects-heading" class="section-title"><span class="section-num">03</span> <span data-en="Projects" data-zh="專案作品">Projects</span></h2>
         <div class="projects-grid">
           <article class="project-card card">
-            <h3 class="project-title">Database Management System</h3>
-            <p>Designed BCNF schema and Java-SQLite CRUD application for logistics.</p>
+            <h3 class="project-title" data-en="Database Management System" data-zh="資料庫管理系統">Database Management System</h3>
+            <p data-en="Designed BCNF schema and Java-SQLite CRUD application for logistics." data-zh="設計 BCNF 綱要與 Java-SQLite CRUD 應用於物流。">Designed BCNF schema and Java-SQLite CRUD application for logistics.</p>
             <ul class="project-tags">
               <li>Java</li>
               <li>SQLite</li>
@@ -168,8 +167,8 @@
             </ul>
           </article>
           <article class="project-card card">
-            <h3 class="project-title">Interdisciplinary AI Art</h3>
-            <p>Built interactive prototypes using Python, Processing, and sensors (The Edge of Innovation).</p>
+            <h3 class="project-title" data-en="Interdisciplinary AI Art" data-zh="跨領域 AI 藝術">Interdisciplinary AI Art</h3>
+            <p data-en="Built interactive prototypes using Python, Processing, and sensors (The Edge of Innovation)." data-zh="以 Python、Processing 與感測器建置互動原型（The Edge of Innovation）。">Built interactive prototypes using Python, Processing, and sensors (The Edge of Innovation).</p>
             <ul class="project-tags">
               <li>Python</li>
               <li>Processing</li>
@@ -180,7 +179,7 @@
       </div>
     </section>
 
-    <section class="section art-lab" id="art-lab" aria-labelledby="art-lab-heading">
+    <section class="section art-lab scroll-reveal" id="art-lab" aria-labelledby="art-lab-heading">
       <div class="sound-wave-bg" aria-hidden="true">
         <span class="sound-bar"></span>
         <span class="sound-bar"></span>
@@ -199,11 +198,11 @@
         <h2 id="art-lab-heading" class="section-title art-lab-title">
           <span class="section-num">—</span> <span data-en="The Edge: Where Art Meets Code" data-zh="邊緣：當藝術遇見程式">The Edge: Where Art Meets Code</span>
         </h2>
-        <p class="art-lab-subtitle">跨領域藝術實驗室 · Interdisciplinary Art Lab</p>
+        <p class="art-lab-subtitle" data-en="Interdisciplinary Art Lab" data-zh="跨領域藝術實驗室">Interdisciplinary Art Lab</p>
         <div class="art-lab-grid">
           <article class="art-lab-card card art-card-a">
-            <h3 class="art-lab-card-title">Synesthetic AI</h3>
-            <p class="art-lab-card-desc">Developed interactive prototypes using Python and Processing, transforming violin audio frequencies into real-time generative visuals.</p>
+            <h3 class="art-lab-card-title" data-en="Synesthetic AI" data-zh="Synesthetic AI">Synesthetic AI</h3>
+            <p class="art-lab-card-desc" data-en="Developed interactive prototypes using Python and Processing, transforming violin audio frequencies into real-time generative visuals." data-zh="以 Python 與 Processing 開發互動原型，將小提琴音頻即時轉為生成視覺。">Developed interactive prototypes using Python and Processing, transforming violin audio frequencies into real-time generative visuals.</p>
             <ul class="art-lab-tags">
               <li>Python</li>
               <li>Processing</li>
@@ -211,26 +210,26 @@
             </ul>
           </article>
           <article class="art-lab-card card art-card-b">
-            <h3 class="art-lab-card-title">Bilingual Jazz-Hip Hop Fusion</h3>
-            <p class="art-lab-card-desc">Composed and produced a bilingual demo integrating A&R marketing concepts, leveraging Logic Pro for professional post-production.</p>
+            <h3 class="art-lab-card-title" data-en="Bilingual Jazz-Hip Hop Fusion" data-zh="雙語 Jazz-Hip Hop 融合">Bilingual Jazz-Hip Hop Fusion</h3>
+            <p class="art-lab-card-desc" data-en="Composed and produced a bilingual demo integrating A&R marketing concepts, leveraging Logic Pro for professional post-production." data-zh="作曲並製作雙語 demo，整合 A&R 行銷概念，以 Logic Pro 進行專業後製。">Composed and produced a bilingual demo integrating A&R marketing concepts, leveraging Logic Pro for professional post-production.</p>
             <ul class="art-lab-tags">
               <li>Logic Pro</li>
-              <li>Audio Engineering</li>
+              <li data-en="Audio Engineering" data-zh="音訊工程">Audio Engineering</li>
             </ul>
           </article>
           <article class="art-lab-card card art-card-c">
             <h3 class="art-lab-card-title">étoile: Sound Design</h3>
-            <p class="art-lab-card-desc">Engineered foley and ambience for animation, applying rigorous post-production workflows.</p>
+            <p class="art-lab-card-desc" data-en="Engineered foley and ambience for animation, applying rigorous post-production workflows." data-zh="為動畫設計 Foley 與環境音，落實嚴謹後製流程。">Engineered foley and ambience for animation, applying rigorous post-production workflows.</p>
             <ul class="art-lab-tags">
-              <li>Sound Design</li>
-              <li>Post-production</li>
+              <li data-en="Sound Design" data-zh="聲音設計">Sound Design</li>
+              <li data-en="Post-production" data-zh="後製">Post-production</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section skills" id="skills" aria-labelledby="skills-heading">
+    <section class="section skills scroll-reveal" id="skills" aria-labelledby="skills-heading">
       <div class="container">
         <h2 id="skills-heading" class="section-title skills-title"><span class="section-num">04</span> <span data-en="Technical Arsenal" data-zh="技術軍火庫">Technical Arsenal</span></h2>
         <p class="skills-subtitle" data-en="Full-Stack &amp; MIS Architecture" data-zh="全端與 MIS 架構">Full-Stack & MIS Architecture</p>
@@ -269,14 +268,14 @@
       </div>
     </section>
 
-    <section class="section contact" id="contact" aria-labelledby="contact-heading">
+    <section class="section contact scroll-reveal" id="contact" aria-labelledby="contact-heading">
       <div class="container">
-        <h2 id="contact-heading" class="section-title"><span class="section-num">05</span> <span data-en="Contact" data-zh="聯絡">Contact</span></h2>
+        <h2 id="contact-heading" class="section-title"><span class="section-num">05</span> <span data-en="Contact" data-zh="聯絡方式">Contact</span></h2>
         <div class="contact-block">
           <p class="contact-email">
             <a href="mailto:lan.227@osu.edu" class="email-link">lan.227@osu.edu</a>
           </p>
-          <a href="mailto:lan.227@osu.edu" class="btn-connect btn" data-en="Let's Connect" data-zh="聯絡我">Let's Connect</a>
+          <a href="mailto:lan.227@osu.edu" class="btn-connect btn" data-en="Let's Connect" data-zh="建立連結">Let's Connect</a>
         </div>
       </div>
     </section>
@@ -285,6 +284,8 @@
   <footer class="site-footer">
     <p>© <span id="year"></span> Hsiangyu (Shawn) Lan. <span data-en="Built with strategy &amp; vibe." data-zh="以策略與氛圍打造。">Built with strategy & vibe.</span></p>
   </footer>
+
+  <button type="button" class="floating-btn" id="lang-toggle" aria-label="Switch language" title="EN / 中文">🌐 EN/中文</button>
 
   <script src="script.js"></script>
 </body>

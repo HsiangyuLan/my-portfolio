@@ -35,6 +35,17 @@ html {
   scroll-behavior: smooth; /* 導航錨點平滑滾動 */
 }
 
+/* 滾動浮現 (Scroll Reveal) — 區塊進入視窗時滑入 */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.scroll-reveal.fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 body {
   font-family: var(--font-sans);
   font-weight: 400;
@@ -96,32 +107,32 @@ a:hover {
   border-bottom: 1px solid var(--border-subtle);
 }
 
-.lang-toggle {
+/* 懸浮語言切換鈕 (FAB) — 固定右下角，全裝置一致 */
+.floating-btn {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 60;
-  padding: 0.5rem 0.85rem;
+  bottom: 30px;
+  right: 20px;
+  z-index: 9999;
+  padding: 0.6rem 1rem;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  color: var(--neon-blue);
-  background: transparent;
-  border: 1px solid var(--neon-blue);
+  color: var(--neon-green);
+  background: #000000cc;
+  border: 2px solid var(--neon-green);
   border-radius: var(--radius);
   cursor: pointer;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 20px rgba(0, 255, 136, 0.2);
   transition: all 0.3s ease;
 }
-.lang-toggle:hover {
-  color: var(--bg-dark);
-  background: rgba(0, 212, 255, 0.2);
-  box-shadow: 0 0 16px rgba(0, 212, 255, 0.35);
+.floating-btn:hover {
+  background: rgba(0, 255, 136, 0.15);
+  box-shadow: 0 0 24px rgba(0, 255, 136, 0.4);
 }
-.lang-toggle:active {
-  color: var(--bg-dark);
-  background: rgba(0, 212, 255, 0.25);
-  box-shadow: 0 0 16px rgba(0, 212, 255, 0.4);
-  transform: scale(0.98);
+.floating-btn:active {
+  transform: scale(0.97);
 }
 
 /* 手機觸控：按鈕與技能標籤點擊瞬間變色／波紋感 */
@@ -150,13 +161,29 @@ a:hover {
   justify-content: center;
   gap: 1.5rem 2rem;
 }
-.nav-list a {
+.nav-list a,
+.nav-link {
   color: var(--text-muted);
   font-weight: 500;
   font-size: 0.9rem;
+  position: relative;
 }
-.nav-list a:hover {
+.nav-link:hover {
   color: var(--neon-blue);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--neon-green);
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+.nav-link:hover::after {
+  width: 100%;
 }
 
 /* Hero — 上內距保留給固定導航，打字機不被遮擋 */
@@ -921,29 +948,6 @@ body[data-lang="zh"] .lang-zh {
 
 /* Responsive */
 @media (max-width: 768px) {
-  /* 語言按鈕改為右下角懸浮圓形 FAB，不擋內容 */
-  .lang-toggle {
-    top: auto;
-    left: auto;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 56px;
-    height: 56px;
-    padding: 0;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    line-height: 1;
-    background: rgba(0, 255, 136, 0.12);
-    border: 2px solid var(--neon-green);
-    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .lang-toggle:hover {
-    background: rgba(0, 255, 136, 0.2);
-    box-shadow: 0 0 24px rgba(0, 255, 136, 0.35);
-  }
   .hero {
     padding-top: 7.5rem;
   }
@@ -964,13 +968,6 @@ body[data-lang="zh"] .lang-zh {
 @media (max-width: 640px) {
   .site-header {
     padding: 1rem;
-  }
-  .lang-toggle {
-    bottom: 1.25rem;
-    right: 1.25rem;
-    width: 52px;
-    height: 52px;
-    font-size: 1.35rem;
   }
   .nav-list {
     gap: 1rem;

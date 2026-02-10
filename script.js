@@ -62,7 +62,7 @@ function haptic() {
 }
 
 function initHaptics() {
-  document.querySelectorAll('.btn, .skill-tag').forEach(el => {
+  document.querySelectorAll('.btn, .skill-tag, .floating-btn').forEach(el => {
     el.addEventListener('click', function () {
       haptic();
     }, { passive: true });
@@ -83,11 +83,28 @@ function initSmoothScroll() {
   });
 }
 
+function initScrollReveal() {
+  const sections = document.querySelectorAll('.scroll-reveal');
+  if (!sections.length) return;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+        }
+      });
+    },
+    { rootMargin: '0px 0px -60px 0px', threshold: 0.1 }
+  );
+  sections.forEach((el) => observer.observe(el));
+}
+
 function init() {
   document.getElementById('year').textContent = new Date().getFullYear();
   initLanguage();
   initHaptics();
   initSmoothScroll();
+  initScrollReveal();
 }
 
 if (document.readyState === 'loading') {
