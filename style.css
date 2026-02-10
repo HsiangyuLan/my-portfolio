@@ -31,7 +31,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* 導航錨點平滑滾動 */
 }
 
 body {
@@ -78,7 +78,7 @@ a:hover {
   font-size: 0.95em;
 }
 
-/* Header & Nav */
+/* Header & Nav — 固定頂部、半透明模糊，不遮擋 Hero 打字機 */
 .site-header {
   position: fixed;
   top: 0;
@@ -88,6 +88,7 @@ a:hover {
   padding: 1.25rem 2rem;
   background: rgba(10, 11, 13, 0.85);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -135,7 +136,7 @@ a:hover {
   color: var(--neon-blue);
 }
 
-/* Hero */
+/* Hero — 上內距保留給固定導航，打字機不被遮擋 */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -165,13 +166,45 @@ a:hover {
   max-width: 720px;
 }
 
-.hero-role {
+/* Typewriter effect */
+.hero-role.typewriter-line {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 2.2vw, 0.85rem);
   color: var(--neon-blue);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   margin-bottom: 0.75rem;
+  min-height: 1.5em;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+.typewriter-inner {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+}
+.typewriter-text {
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 2.2s steps(28) 0.4s forwards;
+  vertical-align: bottom;
+}
+.typewriter-cursor {
+  display: inline-block;
+  color: #00ff9d;
+  font-weight: 700;
+  animation: typewriter-cursor-blink 0.8s step-end infinite;
+  margin-left: 1px;
+}
+@keyframes typewriter {
+  to { width: 28ch; }
+}
+@keyframes typewriter-cursor-blink {
+  50% { opacity: 0; }
 }
 
 .hero-title {
