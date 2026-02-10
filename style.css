@@ -91,6 +91,34 @@ a:hover {
   border-bottom: 1px solid var(--border-subtle);
 }
 
+.lang-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 60;
+  padding: 0.5rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--neon-blue);
+  background: transparent;
+  border: 1px solid var(--neon-blue);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.lang-toggle:hover {
+  color: var(--bg-dark);
+  background: rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.35);
+}
+.lang-toggle:active {
+  color: var(--bg-dark);
+  background: rgba(0, 212, 255, 0.25);
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.4);
+  transform: scale(0.98);
+}
+
 .nav-list {
   list-style: none;
   display: flex;
@@ -179,7 +207,8 @@ a:hover {
   font-weight: 600;
   transition: background var(--transition), color var(--transition), transform var(--transition);
 }
-.hero-cta:hover {
+.hero-cta:hover,
+.hero-cta:active {
   background: var(--neon-green);
   color: var(--bg-dark);
   transform: translateY(-2px);
@@ -190,7 +219,8 @@ a:hover {
   border-color: var(--neon-blue);
   background: transparent;
 }
-.hero-cta-ghost:hover {
+.hero-cta-ghost:hover,
+.hero-cta-ghost:active {
   color: var(--text-primary);
   border-color: var(--neon-blue);
   background: rgba(0, 212, 255, 0.15);
@@ -207,7 +237,8 @@ a:hover {
   justify-content: center;
   gap: 0.5rem;
 }
-.hero-cta-linkedin:hover {
+.hero-cta-linkedin:hover,
+.hero-cta-linkedin:active {
   color: #fff;
   border-color: #0077b5;
   background: rgba(0, 119, 181, 0.25);
@@ -399,15 +430,18 @@ a:hover {
   color: var(--neon-green);
   border-color: var(--neon-green);
 }
-.eng-card-link:hover {
+.eng-card-link:hover,
+.eng-card-link:active {
   background: var(--terminal-green);
   color: var(--bg-dark);
 }
-.eng-card:nth-child(2) .eng-card-link:hover {
+.eng-card:nth-child(2) .eng-card-link:hover,
+.eng-card:nth-child(2) .eng-card-link:active {
   background: var(--neon-blue);
   color: var(--bg-dark);
 }
-.eng-card:nth-child(3) .eng-card-link:hover {
+.eng-card:nth-child(3) .eng-card-link:hover,
+.eng-card:nth-child(3) .eng-card-link:active {
   background: var(--neon-green);
   color: var(--bg-dark);
 }
@@ -725,7 +759,10 @@ a:hover {
   transition: all 0.3s ease;
   cursor: default;
 }
-.skill-tags li:hover {
+.skill-tags li:hover,
+.skill-tags li:active,
+.skill-tag:hover,
+.skill-tag:active {
   border-color: var(--neon-blue);
   box-shadow: 0 0 14px rgba(0, 212, 255, 0.5), 0 0 28px rgba(0, 212, 255, 0.2);
   background: rgba(0, 212, 255, 0.18);
@@ -737,7 +774,10 @@ a:hover {
   color: var(--terminal-green);
   border-color: rgba(57, 255, 20, 0.2);
 }
-.skill-group:nth-child(2) .skill-tags li:hover {
+.skill-group:nth-child(2) .skill-tags li:hover,
+.skill-group:nth-child(2) .skill-tags li:active,
+.skill-group:nth-child(2) .skill-tag:hover,
+.skill-group:nth-child(2) .skill-tag:active {
   border-color: #00ff9d;
   box-shadow: 0 0 14px rgba(0, 255, 157, 0.5), 0 0 28px rgba(0, 255, 157, 0.2);
   background: rgba(0, 255, 157, 0.15);
@@ -749,7 +789,10 @@ a:hover {
   color: var(--neon-green);
   border-color: rgba(0, 255, 136, 0.2);
 }
-.skill-group:nth-child(3) .skill-tags li:hover {
+.skill-group:nth-child(3) .skill-tags li:hover,
+.skill-group:nth-child(3) .skill-tags li:active,
+.skill-group:nth-child(3) .skill-tag:hover,
+.skill-group:nth-child(3) .skill-tag:active {
   border-color: #00ff88;
   box-shadow: 0 0 14px rgba(0, 255, 136, 0.5), 0 0 28px rgba(0, 255, 136, 0.2);
   background: rgba(0, 255, 136, 0.18);
@@ -786,7 +829,8 @@ a:hover {
   border: none;
   transition: transform var(--transition), box-shadow var(--transition);
 }
-.btn-connect:hover {
+.btn-connect:hover,
+.btn-connect:active {
   transform: translateY(-3px);
   box-shadow: 0 8px 30px rgba(0, 212, 255, 0.35);
 }
@@ -819,6 +863,12 @@ a:hover {
 @media (max-width: 640px) {
   .site-header {
     padding: 1rem;
+  }
+  .lang-toggle {
+    top: 0.6rem;
+    right: 0.6rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
   }
   .nav-list {
     gap: 1rem;
