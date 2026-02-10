@@ -672,6 +672,7 @@ a:hover {
 
 .skill-group {
   border: 1px solid rgba(0, 212, 255, 0.2);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .skill-group:nth-child(2) {
   border-color: rgba(57, 255, 20, 0.25);
@@ -680,16 +681,16 @@ a:hover {
   border-color: rgba(0, 255, 136, 0.2);
 }
 .skill-group:hover {
-  border-color: rgba(0, 212, 255, 0.4);
-  box-shadow: 0 0 24px rgba(0, 212, 255, 0.08);
+  border-color: rgba(0, 212, 255, 0.6);
+  box-shadow: 0 0 28px rgba(0, 212, 255, 0.15), 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 .skill-group:nth-child(2):hover {
-  border-color: rgba(57, 255, 20, 0.4);
-  box-shadow: 0 0 24px var(--terminal-green-dim);
+  border-color: rgba(57, 255, 20, 0.55);
+  box-shadow: 0 0 28px var(--terminal-green-dim), 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 .skill-group:nth-child(3):hover {
-  border-color: rgba(0, 255, 136, 0.35);
-  box-shadow: 0 0 24px var(--neon-green-dim);
+  border-color: rgba(0, 255, 136, 0.5);
+  box-shadow: 0 0 28px var(--neon-green-dim), 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .skill-group .skill-category {
@@ -721,16 +722,39 @@ a:hover {
   color: var(--neon-blue);
   border-radius: 6px;
   border: 1px solid rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.skill-tags li:hover {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 14px rgba(0, 212, 255, 0.5), 0 0 28px rgba(0, 212, 255, 0.2);
+  background: rgba(0, 212, 255, 0.18);
+  color: #e8faff;
+  transform: translateY(-3px);
 }
 .skill-group:nth-child(2) .skill-tags li {
   background: var(--terminal-green-dim);
   color: var(--terminal-green);
   border-color: rgba(57, 255, 20, 0.2);
 }
+.skill-group:nth-child(2) .skill-tags li:hover {
+  border-color: #00ff9d;
+  box-shadow: 0 0 14px rgba(0, 255, 157, 0.5), 0 0 28px rgba(0, 255, 157, 0.2);
+  background: rgba(0, 255, 157, 0.15);
+  color: #e8ffe8;
+  transform: translateY(-3px);
+}
 .skill-group:nth-child(3) .skill-tags li {
   background: var(--neon-green-dim);
   color: var(--neon-green);
   border-color: rgba(0, 255, 136, 0.2);
+}
+.skill-group:nth-child(3) .skill-tags li:hover {
+  border-color: #00ff88;
+  box-shadow: 0 0 14px rgba(0, 255, 136, 0.5), 0 0 28px rgba(0, 255, 136, 0.2);
+  background: rgba(0, 255, 136, 0.18);
+  color: #e8ffef;
+  transform: translateY(-3px);
 }
 
 @media (max-width: 900px) {
