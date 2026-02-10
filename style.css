@@ -10,13 +10,14 @@
   --text-muted: #9ca3af;
   --neon-blue: #00d4ff;
   --neon-green: #00ff88;
+  --terminal-green: #39ff14;
   --neon-blue-dim: rgba(0, 212, 255, 0.15);
   --neon-green-dim: rgba(0, 255, 136, 0.12);
   --border-subtle: rgba(255, 255, 255, 0.06);
   --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.08);
-  --terminal-green: #39ff14;
   --terminal-green-dim: rgba(57, 255, 20, 0.12);
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans-zh: 'PingFang TC', 'Microsoft JhengHei', var(--font-sans);
   --font-mono: 'Roboto Mono', monospace;
   --space-unit: 1rem;
   --radius: 12px;
@@ -42,6 +43,9 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
+}
+body[data-lang="zh"] {
+  font-family: var(--font-sans-zh);
 }
 
 .skip-link {
@@ -120,6 +124,25 @@ a:hover {
   transform: scale(0.98);
 }
 
+/* 手機觸控：按鈕與技能標籤點擊瞬間變色／波紋感 */
+.btn:active,
+.skill-tag:active {
+  transition-duration: 0.05s;
+}
+@media (hover: none) {
+  .btn:active,
+  .skill-tag:active {
+    filter: brightness(1.15);
+  }
+  .hero-cta:active { filter: brightness(1.2); }
+  .eng-card-link:active { filter: brightness(1.15); }
+  .btn-connect:active { filter: brightness(1.1); }
+}
+/* 減少 iOS 預設 tap 灰底，改用我們自己的 :active */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .nav-list {
   list-style: none;
   display: flex;
@@ -179,6 +202,15 @@ a:hover {
   justify-content: center;
   overflow: visible;
 }
+.typewriter-zh {
+  display: none;
+}
+body[data-lang="zh"] .typewriter-en {
+  display: none;
+}
+body[data-lang="zh"] .typewriter-zh {
+  display: block;
+}
 .typewriter-inner {
   display: inline-block;
   white-space: nowrap;
@@ -193,15 +225,21 @@ a:hover {
   animation: typewriter 2.2s steps(28) 0.4s forwards;
   vertical-align: bottom;
 }
+.typewriter-inner-zh .typewriter-text-zh {
+  animation: typewriter-zh 2.8s steps(14) 0.4s forwards;
+}
+@keyframes typewriter {
+  to { width: 28ch; }
+}
+@keyframes typewriter-zh {
+  to { width: 14em; }
+}
 .typewriter-cursor {
   display: inline-block;
   color: #00ff9d;
   font-weight: 700;
   animation: typewriter-cursor-blink 0.8s step-end infinite;
   margin-left: 1px;
-}
-@keyframes typewriter {
-  to { width: 28ch; }
 }
 @keyframes typewriter-cursor-blink {
   50% { opacity: 0; }
@@ -322,22 +360,26 @@ a:hover {
   border-color: rgba(0, 212, 255, 0.2);
 }
 
-/* About */
+/* About — 深度雙語 lang-en / lang-zh */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
-
-.about-card .about-subtitle {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--neon-green);
-  margin-bottom: 0.5rem;
+.lang-zh {
+  display: none;
 }
+body[data-lang="zh"] .lang-en {
+  display: none;
+}
+body[data-lang="zh"] .lang-zh {
+  display: block;
+}
+.about-card p.about-intro,
 .about-card p {
   color: var(--text-muted);
   font-size: 0.95rem;
+  line-height: 1.65;
 }
 
 /* ============================================
@@ -879,6 +921,32 @@ a:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
+  /* 語言按鈕改為右下角懸浮圓形 FAB，不擋內容 */
+  .lang-toggle {
+    top: auto;
+    left: auto;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1;
+    background: rgba(0, 255, 136, 0.12);
+    border: 2px solid var(--neon-green);
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lang-toggle:hover {
+    background: rgba(0, 255, 136, 0.2);
+    box-shadow: 0 0 24px rgba(0, 255, 136, 0.35);
+  }
+  .hero {
+    padding-top: 7.5rem;
+  }
   .hero-cta-wrap {
     flex-direction: column;
     width: 100%;
@@ -898,16 +966,17 @@ a:hover {
     padding: 1rem;
   }
   .lang-toggle {
-    top: 0.6rem;
-    right: 0.6rem;
-    padding: 0.4rem 0.6rem;
-    font-size: 0.75rem;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 52px;
+    height: 52px;
+    font-size: 1.35rem;
   }
   .nav-list {
     gap: 1rem;
   }
   .hero {
-    padding: 5rem 1rem 3rem;
+    padding: 6.5rem 1rem 3rem;
   }
   .hero-cta-wrap {
     max-width: 280px;

@@ -28,6 +28,17 @@ function applyLanguage(lang) {
   });
   document.documentElement.lang = isEn ? 'en' : 'zh-Hant';
   if (document.body) document.body.dataset.lang = lang;
+  // 切換到中文時重啟打字機動畫，讓中文打字效果正常播放
+  if (lang === 'zh') {
+    const zhText = document.querySelector('.typewriter-text-zh');
+    if (zhText) {
+      zhText.style.animation = 'none';
+      zhText.style.width = '0';
+      zhText.offsetHeight; // force reflow
+      zhText.style.animation = '';
+      zhText.style.width = '';
+    }
+  }
 }
 
 function toggleLanguage() {
